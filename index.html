@@ -24,6 +24,7 @@ function runInspection() {
       var responseJson = JSON.parse(this.responseText);
       if (this.status == 200) {
         listMobileFriendlyIssues(responseJson);
+        console.log(responseJson);
         document.getElementById('image').src =
             "data:" + responseJson.screenshot.mimeType + ';base64,' + responseJson.screenshot.data;
       } else {
